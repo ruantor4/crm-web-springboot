@@ -27,4 +27,11 @@ public class CompanyService {
 		Optional<Company> obj = companyRepository.findById(id);
 		return obj.get();
 	}
+
+	// FUNÇÃO DE CRIAR "COMPANY"
+	
+	public Company create(Company obj) {
+		return companyRepository.save(obj);
+		
+	}
 }
