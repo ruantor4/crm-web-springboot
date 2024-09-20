@@ -28,6 +28,10 @@ public class Customer implements Serializable {
 	@ManyToMany
 	private List<Company> companies = new ArrayList<>();
 
+	public Customer() {
+
+	}
+
 	public Customer(Long id, String customerName, String position, String celphone, String email) {
 		super();
 		this.id = id;
