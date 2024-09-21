@@ -28,9 +28,18 @@ public class CustomerService {
 		return obj.get();
 	}
 
+	// FUNÇÃO DE CRIAR "CUSTOMERS"
+
 	public Customer create(Customer obj) {
 		return customerRepository.save(obj);
 
+	}
+
+	// FUNÇÃO DE DELETAR "CUSTOMERS"
+	
+	public void delete(Long id) {
+		findById(id);
+		customerRepository.deleteById(id);
 	}
 
 }

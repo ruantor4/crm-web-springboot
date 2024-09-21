@@ -34,4 +34,13 @@ public class CompanyService {
 		return companyRepository.save(obj);
 		
 	}
+	
+	// FUNÇÃO DE DELETAR "COMPANY"
+	
+	public void delete(Long id) {
+		findById(id);
+		companyRepository.deleteById(id);
+	}
+	
+	
 }
