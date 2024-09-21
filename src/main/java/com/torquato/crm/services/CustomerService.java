@@ -27,4 +27,10 @@ public class CustomerService {
 		Optional<Customer> obj = customerRepository.findById(id);
 		return obj.get();
 	}
+
+	public Customer create(Customer obj) {
+		return customerRepository.save(obj);
+
+	}
+
 }
