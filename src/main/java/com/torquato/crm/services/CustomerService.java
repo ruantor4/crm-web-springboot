@@ -36,10 +36,27 @@ public class CustomerService {
 	}
 
 	// FUNÇÃO DE DELETAR "CUSTOMERS"
-	
+
 	public void delete(Long id) {
 		findById(id);
 		customerRepository.deleteById(id);
+	}
+
+	// FUNÇÃO DE EDITAR "CUSTOMERS"
+
+	public Customer update(Long id, Customer obj) {
+		Customer customer = customerRepository.getReferenceById(id);
+		updateData(customer, obj);
+		return customerRepository.save(customer);
+
+	}
+
+	public void updateData(Customer customer, Customer obj) {
+		customer.setcustomerName(obj.getcustomerName());
+		customer.setPosition(obj.getPosition());
+		customer.setCelphone(obj.getCelphone());
+		customer.setEmail(obj.getEmail());
+
 	}
 
 }

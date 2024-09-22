@@ -29,18 +29,32 @@ public class CompanyService {
 	}
 
 	// FUNÇÃO DE CRIAR "COMPANY"
-	
+
 	public Company create(Company obj) {
 		return companyRepository.save(obj);
-		
+
 	}
-	
+
 	// FUNÇÃO DE DELETAR "COMPANY"
-	
+
 	public void delete(Long id) {
 		findById(id);
 		companyRepository.deleteById(id);
 	}
-	
-	
+
+	// FUNÇÃO DE EDITAR "COMPANY"
+
+	public Company update(Long id, Company obj) {
+		Company company = companyRepository.getReferenceById(id);
+		updateData(company, obj);
+		return companyRepository.save(company);
+	}
+
+	public void updateData(Company company, Company obj) {
+		company.setName(obj.getName());
+		company.setRazaoSocial(obj.getRazaoSocial());
+		company.setCity(obj.getCity());
+		company.setSituation(obj.getSituation());
+	}
+
 }
